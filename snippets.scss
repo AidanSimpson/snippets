@@ -1,0 +1,104 @@
+// Important - Note the below code should belong in seperate files.
+
+// @breakpoints.
+$m-break: 56.25em;          // 900px
+$xm-break: 62.5em;          // 1000px
+$l-break: 75em;             // 1200px
+$xl-break: 105em;           // 1680px
+$w-break: 112.5em;          // 1800px
+$uw-break: 156.25em;        // 2500px
+
+$layout-container: 92.75em; // 1484px Layout Container.
+$content-container: 105em;  // 1680px Content Container.
+
+// @spacing.
+$base-space: 1rem;                //16px
+$space-00: calc($base-space / 4); //4px
+$space-10: calc($base-space / 2); //8px
+$space-20: $base-space;           //16px
+$space-30: calc($base-space * 2); //32px
+
+// Helper function to support fetching spacing based on name.
+// space(00);
+@function space($value) {
+    @return var(--space-#{$value});
+}
+
+// PX To Rem Converter
+@use "sass:math";
+// PX to REM converter function is used to convert pixels to rems.
+// 16 is the Default.
+$browser-context: 16;
+
+@function rem($pixels, $context: $browser-context) {
+  @return #{math.div(strip-unit($pixels), $context)}rem;
+}
+
+// @mixins.
+// Determine maximum width of site with @breakpoints.
+@mixin layout-container() {
+  max-width: rem(600);
+  margin-left: auto;
+  margin-right: auto;
+
+  @include breakpoint($m-break) {
+    max-width: $layout-container;
+  }
+}
+
+@mixin layout-container-padding() {
+  padding-left: space(30);
+  padding-right: space(30);
+}
+
+@mixin content-container() {
+  max-width: $layout-container;
+  margin-left: auto;
+  margin-right: auto;
+  @include breakpoint($desktop-break) {
+    max-width: $content-container;
+  }
+}
+
+// Main Content Container.
+// Class is applied within needed Twig template or Regions etc.
+.layout-container {
+  @include content-container();
+}
+
+// Example implementation.
+// Two column layout that sits inside of main content container.
+.two-columns {
+  @include layout-container();
+  @include layout-container-padding();
+
+  .content1,
+  .content2 {
+    display: flex;
+    margin-bottom: 1rem;
+    flex-direction: column;
+    min-width: 100%;
+
+    @include breakpoint(min-width $m-break) {
+      flex-basis: 50%;
+      margin-bottom: 0;
+      min-width: unset;
+    }
+  }
+}
+// Two column layout that contains blocks that extend past main
+// content container.
+.two-columns-custom {
+  .content1, .content2 {
+    display: flex;
+    margin-bottom: 1rem;
+    flex-direction: column;
+    min-width: 100%;
+
+    @include breakpoint(min-width $m-break) {
+      flex-basis: 50%;
+      margin-bottom: 0;
+      min-width: unset;
+    }
+  }
+}
