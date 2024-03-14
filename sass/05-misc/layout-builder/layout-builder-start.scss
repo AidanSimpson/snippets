@@ -86,19 +86,3 @@ $browser-context: 16;
     }
   }
 }
-// Two column layout that contains blocks that extend past main
-// content container.
-.two-columns-custom {
-  .content1, .content2 {
-    display: flex;
-    margin-bottom: 1rem;
-    flex-direction: column;
-    min-width: 100%;
-
-    @include breakpoint(min-width $m-break) {
-      flex-basis: 50%;
-      margin-bottom: 0;
-      min-width: unset;
-    }
-  }
-}

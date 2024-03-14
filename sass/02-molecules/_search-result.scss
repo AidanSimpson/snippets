@@ -1,0 +1,116 @@
+// Search result
+.view-search {
+  @include layout-container-padding();
+
+  // View Header
+  .view-header {
+    padding-bottom: rem(20);
+    border-bottom: 1px solid $tfir-purple;
+  }
+
+  // Results For Summary
+  .results-for {
+    h2 {
+      font-size: rem(24);
+      font-weight: $normal;
+      text-transform: none;
+
+      @include breakpoint($s-break) {
+        font-size: rem(30);
+      }
+    }
+  }
+
+  // Results Display Summary
+  .display-summary {
+    font-size: rem(14);
+    font-style: $italic;
+  }
+
+  // Empty View
+  .view-empty {
+    font-size: rem(20);
+    font-style: $italic;
+  }
+
+  // Result Row
+  .views-row {
+    padding-bottom: rem(24);
+
+    &:not(:last-child) {
+      border-bottom: 1px solid var(--grey-50);
+    }
+  }
+
+  .node,
+  .media {
+    // Node Title
+    h2,
+    .field--name-name {
+      font-size: rem(24);
+      font-weight: $bold;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+    // Field Label
+    .field__label {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+
+    // Field General
+    .field {
+      clear: both;
+      margin-top: rem(10);
+    }
+
+    // Sub Info Fields
+    .node__submitted,
+    .announcement-date,
+    .field--name-field-date .datetime,
+    .field--name-field-date-range,
+    .field--name-field-location-agenda {
+      padding-left: rem(20);
+      padding-bottom: 0;
+      margin-bottom: 0;
+      border-bottom: 0;
+      font-size: rem(14);
+
+      @include breakpoint($m-break) {
+        font-size: rem(14);
+      }
+    }
+
+    // Body Field
+    .field--name-field-body,
+    .field--name-body {
+      * {
+        text-align: left;
+        display: inline;
+        margin-bottom: 0;
+      }
+    }
+
+    // Position Field (Biography)
+    .field--name-field-position {
+      display: inline-flex;
+      align-items: center;
+      color: var(--grey-40);
+
+      &::before {
+        @include icon($material--perm_identity);
+        padding-right: rem(5);
+      }
+    }
+  }
+
+  // Media File Snippet (pulled from PDF)
+  .views-field[class*="field-media-file"] {
+    margin-top: rem(10);
+
+    .field-content {
+      word-break: break-word;
+    }
+  }
+}

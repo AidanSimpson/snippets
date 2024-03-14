@@ -1,0 +1,316 @@
+// Footer
+.region--footer-first {
+  position: relative;
+  padding: space(30) space(30) 0 space(30);
+  margin-bottom: space(30);
+
+  @include breakpoint($m-break) {
+    padding: unset;
+  }
+
+  @include breakpoint($l-break) {
+    flex: 4;
+    margin-bottom: unset;
+  }
+
+  .layout-container {
+    padding-top: rem(16);
+    padding-bottom: rem(16);
+
+    @include breakpoint($m-break) {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+}
+
+.region--footer-second {
+  margin-bottom: space(30);
+
+  @include breakpoint($l-break) {
+    border-left: 1px solid $grey-00;
+    flex: 1;
+    padding-left: space(30);
+  }
+
+  @include breakpoint($xl-break) {
+    padding-left: space(40);
+  }
+
+  .layout-container {
+    @include breakpoint($l-break) {
+      display: flex;
+      justify-content: center;
+    }
+
+    @include breakpoint($l-break) {
+      justify-content: none;
+    }
+  }
+}
+
+.region--footer-third {
+  display: flex;
+  flex-direction: column;
+  order: 1;
+
+  #block-footer-social-media {
+    display: flex;
+    align-items: flex-start;
+    padding: 0 space(30) space(30) space(30);
+
+    @include breakpoint($m-break) {
+      padding: unset;
+      margin: 0 0 space(30) 0;
+    }
+  }
+
+  @include breakpoint($m-break-max) {
+    margin: space(30) 0 0 0;
+  }
+
+  @include breakpoint($l-break) {
+    flex-direction: row;
+    align-items: flex-start;
+    width: 100%;
+
+    #block-footer-social-media {
+      justify-content: center;
+      margin-right: 5rem;
+      order: 2;
+      margin: space(30) 0 0 0;
+      padding: unset;
+    }
+  }
+}
+
+.footer-region {
+  background-color: $tfir-purple;
+  color: $grey-00;
+  padding-top: space(10);
+
+  .block {
+    h2 {
+      color: $grey-00;
+      font-size: rem(14);
+      font-weight: bold;
+    }
+  }
+
+  p {
+    margin: 0;
+  }
+
+  a.btn-primary--black {
+    padding: 0.15rem 5.7rem;
+    margin: 0;
+
+    @include breakpoint($m-break) {
+      padding: 0.15rem 9.7rem;
+    }
+  }
+
+  .footer-logo {
+    width: auto;
+    margin: space(40) 0 space(30);
+  }
+
+  .layout-container {
+    max-width: 92.75em;
+
+    @include breakpoint($m-break) {
+      padding: space(30) space(30) 0 space(30);
+    }
+  }
+
+  .footer-columns {
+    @include breakpoint(min-width $l-break) {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+
+  .block-system-branding-block {
+    height: auto;
+    padding-top: 4rem;
+    margin-bottom: 4rem;
+    .site-logo img {
+      width: auto;
+    }
+  }
+
+  nav.menu--footer {
+    min-height: 175px;
+
+    ul.menu {
+      width: auto;
+      background-color: transparent;
+      display: flex;
+      justify-content: flex-start;
+      column-gap: 2rem;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      @include breakpoint(min-width $m-break-max) {
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+        gap: 3rem;
+      }
+
+      a {
+        background-color: transparent;
+        padding: 0;
+        border: none;
+        text-transform: none;
+
+        a:hover {
+          border: none;
+        }
+      }
+
+      > li {
+        flex-basis: 100%;
+        margin-bottom: 2rem;
+
+        @include breakpoint(min-width 440px) {
+          flex-basis: 46%;
+        }
+
+        @include breakpoint(min-width $xm-break) {
+          flex-basis: auto;
+        }
+
+        > a {
+          text-transform: uppercase;
+          color: $grey-00;
+          border-bottom: solid 1px $grey-00;
+          font-weight: bold;
+          display: block;
+          font-size: rem(14);
+          margin-bottom: space(20);
+          &:hover {
+            border-bottom: 2px double $grey-00;
+          }
+
+          &:focus-visible {
+            outline: 5px auto -webkit-focus-ring-color;
+            margin-top: rem(3); // to show the whole outline of the focus ring
+            margin-left: rem(3);  // to show the whole outline of the focus ring
+          }
+        }
+
+        .sub-nav {
+          display: block;
+          position: static;
+
+          @include breakpoint(max-width $m-break-max) {
+          }
+
+          > li {
+            flex-basis: 100px;
+            margin: 0.3em 0;
+          }
+
+          a {
+            background-color: transparent;
+            padding: 0;
+            border: none;
+            text-transform: none;
+            color: $grey-00;
+            font-weight: bold;
+            margin-bottom: 0;
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+          .is-active {
+            outline: 1px dotted $grey-00;
+          }
+        }
+      }
+    }
+
+    @include breakpoint($l-break) {
+      border-bottom: 1px solid $grey-00;
+      margin-bottom: space(20);
+      padding-right: space(20);
+    }
+  }
+
+  #block-signupandsubscribetoournewslettertoday {
+    border-bottom: 1px solid $grey-00;
+    padding-bottom: space(30);
+
+    h2 {
+      font-size: rem(16);
+
+      @include breakpoint($l-break) {
+        font-size: rem(20);
+      }
+    }
+
+    @include breakpoint($l-break) {
+      position: absolute;
+      bottom: 0;
+      border-bottom: unset;
+      padding-bottom: unset;
+    }
+  }
+
+  #block-footerpolicieslinks {
+    background: $grey-00;
+    color: $grey-100;
+    padding: space(30);
+    order: 2;
+    font-size: rem(11);
+
+    @include breakpoint($m-break) {
+      background: unset;
+      margin-bottom: space(30);
+      color: $grey-00;
+      padding: unset;
+      font-size: rem(14);
+    }
+
+    a {
+      color: $grey-100;
+      text-decoration: none;
+      font-weight: bold;
+      @include breakpoint($m-break) {
+        color: $grey-00;
+      }
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    @include breakpoint($l-break) {
+      order: 1;
+    }
+  }
+
+  #block-contactus {
+    font-size: rem(14);
+    padding: 0 space(30) 0 space(30);
+
+    @include breakpoint($m-break) {
+      padding: unset;
+    }
+
+    h2 {
+      text-transform: uppercase;
+    }
+
+    a {
+      font-weight: bold;
+    }
+
+    .social-media-links {
+      margin: space(30) 0 0;
+      white-space:unset;
+      display: flex;
+      justify-content: space-between;
+      max-width: 250px;
+    }
+  }
+}

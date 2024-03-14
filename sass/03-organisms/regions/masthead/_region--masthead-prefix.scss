@@ -1,0 +1,30 @@
+// Masthead Prefix Region
+
+.region--masthead-prefix {
+  display: none;
+  @include layout-container();
+  @include layout-container-padding();
+  flex-direction: revert;
+  justify-content: flex-end;
+  overflow: visible;
+  z-index: 4;
+  position: relative;
+
+  .wrapper--masthead-prefix {
+    display: flex;
+    justify-content: flex-end;
+  }
+  @media only screen and (min-width: 1200px) {
+    display: flex;
+  }
+}
+
+.path-frontpage {
+  .region--masthead-prefix {
+    display: none;
+
+    @media only screen and (min-width: 1200px) {
+      display: flex;
+    }
+  }
+}

@@ -1,0 +1,20 @@
+/* 1 Column - Narrow Layout */
+
+.one-column-narrow,
+%one-column-narrow {
+  @include layout-container();
+  @include layout-container-padding();
+
+  justify-content: center;
+
+  .column {
+    flex: 0 1 100%;
+    max-width: 100%;
+  }
+
+  @include breakpoint($m-break) {
+    flex: 0 1 70%;
+    max-width: 70%;
+    margin: auto;
+  }
+}

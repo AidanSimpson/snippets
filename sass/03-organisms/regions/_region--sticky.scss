@@ -1,0 +1,12 @@
+// Header | Sticky Region
+.region--sticky {
+  display: flex;
+  background-color: $grey-00;
+}
+
+.fixed-top {
+  position: fixed;
+  width: 100%;
+  z-index: 3;
+  top: 0;
+}

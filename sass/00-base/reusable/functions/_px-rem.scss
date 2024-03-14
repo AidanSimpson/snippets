@@ -1,0 +1,10 @@
+// PX To Rem Converter
+@use "sass:math";
+
+// PX to REM converter function is used to convert pixels to rems
+// 16 is the Default
+$browser-context: 16;
+
+@function rem($pixels, $context: $browser-context) {
+  @return #{math.div(strip-unit($pixels), $context)}rem;
+}

@@ -1,0 +1,80 @@
+/* 2 Columns - Default Layout */
+
+.two-columns {
+  @include layout-container();
+  @include layout-container-padding();
+
+  .content1, .content2 {
+    display: flex;
+    margin-bottom: 1rem;
+    flex-direction: column;
+    min-width: 100%;
+
+    @include breakpoint(min-width $m-break) {
+      flex-basis: 50%;
+      margin-bottom: 0;
+      min-width: unset;
+    }
+  }
+
+  .content1 {
+    /* Space blocks if being stacked in column. */
+    > div + div {
+      margin-top: 2rem;
+    }
+
+    @include breakpoint($m-break) {
+      margin: unset;
+      justify-content: flex-end;
+
+      /* For specific view modes - push to the right side. */
+      .block--block-content--card--centered-icon-and-text,
+      .block--block-content--card--clickable-card,
+      .block--block-content--card--default,
+      .block--block-content--card--full,
+      .block--block-content--card--icon-top-text-bottom,
+      .block--block-content--card--only-text,
+      .block--block-content--card--image-top-text-bottom,
+      .block--block-content--card--icon-top-text-bottom-card {
+        margin-left: auto;
+      }
+    }
+  }
+
+  .content2 {
+
+    /* Space blocks if being stacked in column. */
+    > div + div {
+      margin-top: 2rem;
+    }
+
+    @include breakpoint($m-break) {
+      margin: unset;
+      justify-content: flex-start;
+
+      /* For specific view modes - push to the left side. */
+      .block--block-content--card--centered-icon-and-text,
+      .block--block-content--card--clickable-card,
+      .block--block-content--card--default,
+      .block--block-content--card--full,
+      .block--block-content--card--icon-top-text-bottom,
+      .block--block-content--card--only-text,
+      .block--block-content--card--image-top-text-bottom,
+      .block--block-content--card--icon-top-text-bottom-card {
+        margin-right: auto;
+      }
+    }
+  }
+
+  /* For specific view modes - limit width if in 2 column */
+  .block--block-content--card--centered-icon-and-text,
+  .block--block-content--card--clickable-card,
+  .block--block-content--card--default,
+  .block--block-content--card--full,
+  .block--block-content--card--icon-top-text-bottom,
+  .block--block-content--card--only-text,
+  .block--block-content--card--image-top-text-bottom,
+  .block--block-content--card--icon-top-text-bottom-card {
+    max-width: rem(370);
+  }
+}

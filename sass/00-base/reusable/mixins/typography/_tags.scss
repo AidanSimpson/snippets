@@ -1,0 +1,17 @@
+// Tags style mixin
+@mixin tag-style() {
+  display: block;
+  font-size: rem(12);
+  padding: rem(8) rem(10);
+  border: 1px solid var(--grey-10);
+  border-radius: 2px;
+  text-decoration: none;
+  color: var(--grey-10);
+  text-transform: uppercase;
+
+  &:hover,
+  &:focus {
+    background-color: var(--grey-10);
+    color: var(--grey-70);
+  }
+}

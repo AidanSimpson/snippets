@@ -1,0 +1,85 @@
+// Headings
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0 0 rem(29) 0;
+  color: $grey-00;
+  font-weight: $bold;
+}
+
+// Check typography.scss for reference
+h6 {
+  line-height: $base-line-height;
+  font-size: $base-font-size; //16px
+}
+
+h5 {
+  font-size: $base-font-size-mobile *m-pow(1);
+  line-height: $base-line-height;
+  @include breakpoint($m-break) {
+    font-size: $base-font-size *pow(1);
+  }
+} 
+
+h4 {
+  font-size: $base-font-size-mobile *m-pow(2);
+  line-height: 125%;
+  @include breakpoint($m-break) {
+    font-size: $base-font-size *pow(2);
+    line-height: $base-line-height;
+  }
+}
+
+h3 {
+  font-size: $base-font-size-mobile *m-pow(3);
+  line-height: 125%;
+  @include breakpoint($m-break) {
+    font-size: $base-font-size *pow(3);
+  }
+}
+
+h2 {
+  font-size: $base-font-size-mobile *m-pow(4);
+  line-height: 125%;
+  @include breakpoint($m-break) {
+    font-size: $base-font-size *pow(4);
+  }
+}
+
+// Specific to Daily Schedule teaser.
+.view-daily-schedule h2.field--name-field-title {
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: $base-font-size-mobile *m-pow(5);
+  line-height: 125%;
+  color: $grey-100;
+  font-weight: $black;
+  @include breakpoint($m-break) {
+    font-size: $base-font-size *pow(5);
+  }
+}
+
+// Specific to Exhibit Entity type make H1 Black.
+.block-field-block--node--exhibit--title h1 {
+  color: $grey-00;
+}
+
+// First headings in body
+.field--name-body {
+  & > h1,
+  & > h2,
+  & > h3,
+  & > h4,
+  & > h5,
+  & > h6 {
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+}

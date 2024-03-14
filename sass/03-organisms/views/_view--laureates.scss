@@ -1,0 +1,42 @@
+.view-laureates {
+  margin: 0 $space-10;
+
+  .view-filters {
+
+    .form--inline {
+      .js-form-item {
+        flex: 1 1 rem(300);
+
+        @include breakpoint($s-break) {
+          flex-grow: 0;
+        }
+
+        @include breakpoint($xxl-break) {
+          flex-grow: 1;
+        }
+      }
+
+      input[type="submit"]:last-child {
+        @include btn(primary, white);
+      }
+    }
+  }
+
+  .view-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $space-20 0;
+
+    @include breakpoint($l-break) {
+      gap: $space-20;
+    }
+
+    .views-row {
+      flex: 1 1 rem(800);
+
+      @include breakpoint($l-break) {
+        flex: 1 0 rem(850);
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+/* 4 Column - Default Layout */
+
+.four-columns {
+  @include layout-container();
+  @include layout-container-padding();
+
+  .content1, .content2, .content3, .content4 {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2rem;
+
+    /* Space blocks if being stacked in column. */
+    > div + div {
+      margin-top: 2rem;
+    }
+
+    @include breakpoint(min-width $m-break) {
+      flex-basis: 25%;
+      margin-bottom: 0;
+    }
+  }
+}

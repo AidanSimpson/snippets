@@ -1,0 +1,16 @@
+// Views Rows
+.view[class*="page"] {
+
+  .views-row {
+    padding-bottom: rem(35);
+
+    h2 {
+      margin-top: 0;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: rem(35);
+      border-bottom: 1px solid var(--grey-80);
+    }
+  }
+}

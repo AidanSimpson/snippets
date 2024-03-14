@@ -1,0 +1,18 @@
+// Node Submitted Information
+.node__submitted {
+  position: relative;
+  padding-left: rem(25);
+  color: var(--grey-10);
+
+  &::before {
+    @include icon($material--access-time);
+    position: absolute;
+    left: 0;
+    top: rem(3);
+    color: var(--secondary-1);
+  }
+
+  b {
+    color: var(--grey-00);
+  }
+}

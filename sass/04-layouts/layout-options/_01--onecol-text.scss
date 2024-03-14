@@ -1,0 +1,12 @@
+/* 1 Column - Narrow Layout */
+
+.one-column-text,
+%one-column-text {
+  @include layout-container();
+  @include layout-container-padding();
+
+  .column {
+    flex: 0 1 100%;
+    max-width: 100%;
+  }
+}

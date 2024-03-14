@@ -1,0 +1,16 @@
+// Skip Link for keyboard navigation
+.skip-link {
+  display: flex;
+  align-items: center;
+  margin: rem(10);
+  padding: rem(5);
+  text-align: center;
+  text-decoration: none;
+  font-weight: $bold;
+  color: $brand-special-blue-dark;
+
+  &::before {
+    @include icon($material--arrow_downward);
+    padding-right: rem(10);
+  }
+}

@@ -1,0 +1,26 @@
+/* 2 Column - Main plus Sidebar Layout */
+
+.main-sidebar {
+  @include layout-container();
+  @include layout-container-padding();
+
+  .main {
+    flex: 0 1 100%;
+    max-width: 100%;
+
+    @include breakpoint($m-break) {
+      flex: 0 1 70%;
+      max-width: 70%;
+    }
+  }
+
+  .sidebar {
+    flex: 0 1 100%;
+    max-width: 100%;
+
+    @include breakpoint($m-break) {
+      flex: 0 1 30%;
+      max-width: 30%;
+    }
+  }
+}

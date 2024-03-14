@@ -1,0 +1,14 @@
+/* Events View. */
+
+// Full Node - Title Display
+.view-display-id-block_event_title {
+  .node--view-mode-title {
+      border-bottom: solid 1px $grey-60;
+      margin-bottom: $space-20;
+
+    h1,
+    .node__content {
+      margin: 0 0 $space-10;
+    }
+  }
+}

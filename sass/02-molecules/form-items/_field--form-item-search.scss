@@ -1,0 +1,25 @@
+// Text field
+.form-item-keywords {
+  position: relative;
+
+  &::after {
+    @include icon($material--search);
+    position: absolute;
+    top: 50%;
+    left: rem(13);
+    font-size: rem(20);
+    transform: translateY(-50%);
+    color: var(--primary-1-50);
+  }
+
+  label {
+    @include visually-hidden();
+  }
+
+  input[type="text"] {
+    padding-left: rem(42);
+    padding-top: rem(10);
+    padding-bottom: rem(10);
+    background-color: transparent;
+  }
+}

@@ -1,0 +1,119 @@
+// Table Components
+.table-container {
+  max-width: 100%;
+  overflow: auto;
+  position: relative;
+}
+
+table {
+  width: 100% !important;
+  border: 1px solid $grey-70;
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin-bottom: rem(30);
+  font-size: rem(14);
+  line-height: rem(20);
+
+  @include breakpoint($m-break) {
+    font-size: rem(18);
+  }
+
+  // Head
+  th,
+  thead th{
+    font-size: rem(16);
+    border-bottom: 1px solid $grey-70;
+    background: $tfir-lime;
+    color: $grey-00;
+    padding-top: rem(16);
+    padding-bottom: rem(16);
+    text-align: left;
+
+    @include breakpoint($m-break) {
+      font-size: rem(18);
+    }
+
+    &:not(:last-child) {
+      border-right: 1px solid $grey-70;
+    }
+
+    a {
+      color: var(--grey-100);
+      text-decoration: underline;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+
+  // Body
+  tbody {
+    border: none;
+  }
+
+  // Cells
+  th,
+  td {
+    border: none;
+    vertical-align: top;
+    padding: rem(10) rem(10);
+  }
+
+  td {
+    border-bottom: 1px solid $grey-70;
+
+    &:not(:last-child) {
+      border-right: 1px solid $grey-70;
+    }
+  }
+
+  // Rows
+  tr.odd{
+    background-color: $grey-100;
+  }
+
+  tr:nth-child(odd) {
+    background-color: $grey-100;
+  }
+
+  tr.even{
+    background-color: $brand-special-mist;
+  }
+
+  tr:nth-child(even) {
+    background-color: $brand-special-mist;
+  }
+
+  // Caption
+  caption{
+    caption-side: bottom;
+    text-align: left;
+    position: sticky;
+    left: 0;
+    font-size: rem(14);
+    padding: rem(16) rem(12) rem(16) 0;
+  }
+
+  // Table Sort
+  .tablesort {
+    background-image: none;
+    padding-left: rem(5);
+
+    // Sort Acending
+    &.tablesort--asc {
+      &::before {
+        font-size: rem(14);
+        display: block;
+      }
+    }
+
+    // Sort Decending
+    &.tablesort--desc {
+      &::before {
+        font-size: rem(14);
+        display: block;
+      }
+    }
+  }
+}

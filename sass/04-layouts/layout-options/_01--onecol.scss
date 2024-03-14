@@ -1,0 +1,28 @@
+/* 1 Column - Default Layout */
+
+.one-column {
+  /* For specific view modes - limit width if in 1 column */
+  .block--block-content--card--centered-icon-and-text,
+  .block--block-content--card--clickable-card,
+  .block--block-content--card--default,
+  .block--block-content--card--full,
+  .block--block-content--card--icon-top-text-bottom,
+  .block--block-content--card--only-text,
+  .block--block-content--card--image-top-text-bottom,
+  .block--block-content--card--icon-top-text-bottom-card {
+    max-width: rem(600);
+    margin: auto;
+  }
+}
+
+// For existing Layout Builder content that needs new layout.
+.one-column-override,
+%one-column-override {
+  padding: 0 space(30) 0 space(30);
+
+  @include breakpoint($m-break) {
+    max-width: $layout-container;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

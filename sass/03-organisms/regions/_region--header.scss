@@ -1,0 +1,15 @@
+// Header
+#header {
+  position: relative;
+  background-color: white;
+}
+
+#masthead > .layout-container {
+  display: flex;
+  align-items: center;
+}
+
+// Letter head for print
+.print--letterhead {
+  display: none;
+}

@@ -1,0 +1,10 @@
+// _clearfix
+@mixin clearfix() {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+p.clearfix {
+  clear: both;
+}

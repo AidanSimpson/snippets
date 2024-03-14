@@ -1,0 +1,17 @@
+// Button Class Use
+
+// Btn classes applied are likely in the WYSIWYG and should be inline blocks
+a[class^="btn-"] {
+  display: inline-block;
+}
+
+// Purple and Yellow button options were removed.
+// Adding partial to override avoid mass content update requirement.
+a[class^="btn-primary"] {
+  @include btn(primary, black);
+}
+
+// Primary White
+a.btn-primary--white {
+  @include btn(primary, white);
+}

@@ -1,0 +1,65 @@
+// Links
+.link-black,
+%link-default,
+%link-black {
+  color: $grey-00;
+  transition: all 0.2s;
+  text-decoration: underline;
+  letter-spacing: -0.015em;
+  font-weight: $black;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+a.link-facebook,
+a.link-twitter,
+a.link-instagram,
+a.link-youtube {
+  @extend .link-black;
+  margin-right: 5px;
+  position: relative;
+  padding-left: 31px;
+
+  &:before {
+    position: absolute;
+    top: -6px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: rem(25);
+    height: rem(27);
+  }
+}
+
+a.link-facebook {
+  &:before {
+    content: url('#{$img}/iconography/facebook_black.svg');
+  }
+}
+
+a.link-twitter {
+  &:before {
+    content: url('#{$img}/iconography/twitter_black.svg');
+  }
+}
+
+a.link-instagram {
+  &:before {
+    content: url('#{$img}/iconography/instagram_black.svg');
+  }
+}
+
+a.link-youtube {
+  &:before {
+    content: url('#{$img}/iconography/youtube_black.svg');
+  }
+}
+
+// Override for Links in CKEditor fields.
+div.text-formatted {
+  a:not([class^="btn-primary"]) {
+    @extend .link-black;
+  }
+}

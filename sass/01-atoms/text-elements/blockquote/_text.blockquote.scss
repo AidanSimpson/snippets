@@ -1,0 +1,17 @@
+// Blockquote styles
+.quote-pull,
+blockquote {
+  padding: rem(26) rem(60);
+  margin-left: 0;
+  margin-right: 0;
+  border-left: rem(4) solid $tfir-purple;
+  font-size: rem(20);
+  font-style: italic;
+  line-height: $base-line-height;
+  display: inline-block;
+  background-color: $grey-93;
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+}

@@ -1,0 +1,13 @@
+// All Date Fields
+.node__submitted,
+.field--name-field-date .datetime,
+.field--name-field-date-range,
+.field--name-field-date-and-time {
+  display: flex;
+  position: relative;
+  margin-bottom: rem(35);
+}
+
+.field--name-field-date-and-time {
+  margin-top: space(30);
+}

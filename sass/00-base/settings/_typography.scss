@@ -1,0 +1,58 @@
+// Custom Font Imports  
+@import 'material-icons-variables';
+
+// Weights
+$thin: 100;
+$light: 300;
+$normal: 400;
+// $medium: 500;
+// $semi-bold: 600;
+$bold: 700;
+$black: 750;
+
+// Styles
+$italic: italic;
+
+// Font Sets
+$base-font-size: 1rem;
+$base-font-size-mobile: 0.875rem;
+$base-line-height: 170%;
+$base-font-weight: $normal;
+$base-font-family: "Avenir LT Pro", sans-serif;
+$title-font-weight: $bold;
+$title-font-family: $base-font-family;
+
+/* Function to calculate power to dynamatically scale font sizes.
+Adjust $font-scale and $font-scale-mobile value as well as
+ $base-font-size based on design.
+Type scale calculator for visual referfence: https://type-scale.com/
+More detailed info here: https://kalamuna.atlassian.net/wiki/spaces/KALA/pages/2639757337/Typography+modular+scale+methodology
+This is being used in headings.scss */
+
+$font-scale: 1.250; // Major Third
+$font-scale-mobile: 1.200; // Minor Third
+
+@function pow($exponent) {
+  $value: 1;
+
+  @if $exponent > 0 {
+    @for $i from 1 through $exponent {
+      $value: $value * $font-scale;
+    }
+  }
+
+  @return $value;
+}
+  
+//Function to calculate power for mobile
+@function m-pow($exponent) {
+  $value: 1;
+
+  @if $exponent > 0 {
+    @for $i from 1 through $exponent {
+        $value: $value * $font-scale-mobile;
+    }
+  }
+
+  @return $value;
+}

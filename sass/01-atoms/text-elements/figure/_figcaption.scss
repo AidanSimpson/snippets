@@ -1,0 +1,10 @@
+// Figure Caption elements
+figure figcaption {
+  margin-top: 0;
+  padding: rem(12) rem(10);
+  background-color: var(--grey-80);
+  font-style: $italic;
+  border-width: 0 1px 1px 1px;
+  border-style: solid;
+  border-color: var(--grey-70);
+}

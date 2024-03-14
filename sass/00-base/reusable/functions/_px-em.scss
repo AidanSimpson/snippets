@@ -1,0 +1,10 @@
+// PX To Em Converter
+@use "sass:math";
+
+// PX to EM converter function is used to convert pixels to ems
+// 16 is the Default
+$browser-context: 16;
+
+@function em($pixels, $context: $browser-context) {
+  @return #{math.div(strip-unit($pixels), $context)}em;
+}

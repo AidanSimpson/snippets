@@ -1,0 +1,120 @@
+// @theme palette
+
+// Only use the below SCSS varialbes in SCSS functions to avoid compile error, other
+// than that those are just for references. Please use CSS color variables 
+// to easily convert project into light/dark theme. CSS variables at the bottom of file.
+
+// Primary
+$brand-primary-yellow: #F5C23E;
+$brand-primary-orange: #FF8800;
+$brand-primary-purple: #7D21C7;
+$brand-primary-blue:   #18A0FB;
+
+// Primary Hover
+$brand-primary-yellow-hover: #FFE19E;
+$brand-primary-purple-hover: #B562F9;
+
+// Primary Darken
+$brand-primary-yellow-dark: #B7880E;
+$brand-primary-purple-dark: #63189F;
+
+// Secondary
+$brand-secondary-yellow: #F5C23E;
+$brand-secondary-cream:  #FFE19E;
+$brand-secondary-green:  #3BB273;
+$brand-secondary-red:    #FF8576;
+$brand-secondary-blue:   #9ED8FF;
+
+// Special
+$brand-special-blue:      #0070BB;
+$brand-special-blue-dark: #142F53;
+$brand-special-deep-gray: #52616B;
+$brand-special-soft-gray: #F0F5F9;
+$brand-special-mist:      #F8F8F8;
+
+// Greyscale palette
+$grey-00:     #000000;
+$grey-10:     #191919;
+$grey-20:     #333333;
+$grey-30:     #4D4D4D;
+$grey-40:     #666666;
+$grey-50:     #808080;
+$grey-60:     #999999;
+$grey-70:     #B3B3B3;
+$grey-80:     #CCCCCC;
+$grey-90:     #E5E5E5;
+$grey-93:     #f3f3f3;
+$grey-95:     #F2F2F2;
+$grey-100:    #ffffff;
+
+// Debug palette
+$debug-red:    rgb(160, 0, 0);
+$debug-yellow: #FFD424;
+$debug-green:  rgb(0, 160, 0);
+$debug-blue:   rgb(0, 0, 160);
+
+// Link palette
+$link-colour: #006CB8;
+$link-hover: #00548F;
+
+// Shadow palette
+$shadow: rgba($grey-10, 0.2);
+
+// CSS Color variables
+// For instance, to use color $brand-primary-1, use var(primary-1-**) variations below instead.
+:root,
+:root.light {
+  // @primary
+  --primary-yellow: #{$brand-primary-yellow};
+  --primary-orange: #{$brand-primary-orange};
+  --primary-purple: #{$brand-primary-purple};
+  --primary-blue:   #{$brand-primary-blue};
+
+  // @secondary
+  --secondary-1: #{$brand-secondary-yellow};
+  --secondary-2: #{$brand-secondary-cream};
+  --secondary-3: #{$brand-secondary-green};
+  --secondary-4: #{$brand-secondary-red};
+  --secondary-5: #{$brand-secondary-blue};
+
+  // @debug
+  --debug-red:    darken($debug-red, 50%);
+  --debug-yellow: darken($debug-yellow, 50%);
+  --debug-green:  darken($debug-green, 50%);
+  --debug-blue:   darken($debug-blue, 50%);
+
+  // @link
+  --link-colour: #{$link-colour};
+  --link-hover:  #{$link-hover};
+  --shadow:      #{$shadow};
+
+  // @greyscale
+  --grey-00: #{$grey-00};
+  --grey-10: #{$grey-10};
+  --grey-20: #{$grey-20}; 
+  --grey-30: #{$grey-30};
+  --grey-40: #{$grey-40};
+  --grey-50: #{$grey-50};
+  --grey-60: #{$grey-60};
+  --grey-70: #{$grey-70};
+  --grey-80: #{$grey-80};
+  --grey-90: #{$grey-90};
+  --grey-100: #{$grey-100};
+}
+
+// Site has no dark theme at the moment
+// @DARK theme color sets
+:root.dark {
+  // Primary palette
+
+  // @accent colors palette
+
+  // @greyscale palette
+}
+
+// Helper function to support a simple function
+// name for fetching colors based on name or usage.
+// color(grey-00);
+@function color($name) {
+  @return var(--color-#{$name});
+}

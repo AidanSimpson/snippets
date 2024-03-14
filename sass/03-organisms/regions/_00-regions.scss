@@ -1,0 +1,22 @@
+// Regions
+.region {
+  overflow: hidden;
+
+  .region-inner {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+
+    @include breakpoint($m-break) {
+      align-items: center;
+    }
+  }
+}
+
+// Main Canvas
+.dialog-off-canvas-main-canvas {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow: hidden;
+}

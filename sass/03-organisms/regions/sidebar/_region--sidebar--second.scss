@@ -1,0 +1,28 @@
+// Sidebar Second
+.layout-sidebar-second {
+  border-top: 1px solid var(--grey-70);
+  margin-top: rem(31);
+  padding-top: rem(16);
+
+  @include breakpoint($m-break) {
+    margin-top: rem(61);
+    padding-top: rem(31);
+  }
+
+  @include breakpoint($m-break) {
+    border-top: none;
+    flex: 0 0 186px;
+    margin-top: 0;
+    padding-top: 0;
+  }
+
+  @include breakpoint($m-break) {
+    flex: 0 0 300px;
+    margin-left: 60px;
+  }
+
+  @include breakpoint($xm-break) {
+    flex: 0 0 328px;
+    margin-left: 100px;
+  }
+}

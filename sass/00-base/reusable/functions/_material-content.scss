@@ -1,0 +1,4 @@
+// Convenience function used to set content property
+@function material-content($material-var) {
+  @return unquote("\"#{ $material-var }\"");
+}

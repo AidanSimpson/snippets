@@ -1,0 +1,52 @@
+/* Search View. */
+
+// Exposed Search Form.
+.view-id-search {
+  @include layout-container();
+  @include layout-container-padding();
+  margin-bottom: space(30);
+
+  .view-filters {
+    .views-exposed-form .form--inline {
+      .form-item-keywords .form-text {
+      }
+      @include breakpoint($s-break) {
+        flex-wrap: unset;
+        align-items: unset;
+      }
+    }
+  }
+  // Search Results.
+  .view-content {
+    .views-row {
+      .views-field-title {
+        margin-bottom: 0.4rem;
+
+        a {
+          color: $tfir-blue;
+          font-weight: $bold;
+          text-decoration: none;
+
+          &:hover {
+            color: $grey-20;
+          }
+        }
+      }
+
+      .views-field-search-api-excerpt {
+        font-size: .875rem;
+        margin-bottom: 0;
+      }
+
+      &:not(:last-child) {
+        margin-bottom: 2rem;
+        border-bottom: 1px solid $grey-80;
+      }
+
+      &:first-child {
+        padding-top: 3rem;
+        border-top: 2px solid $grey-80;
+      }
+    }
+  }
+}

@@ -1,0 +1,98 @@
+// Masthead Primary Region
+.region--masthead-primary {
+  @include layout-container();
+  @include layout-container-padding();
+}
+
+// Need to review the below
+.region--masthead-primary {
+  overflow: visible;
+  max-width: $layout-container;
+  margin: auto;
+
+  .region-inner {
+    flex-wrap: nowrap;
+    align-items: stretch;
+  }
+}
+
+// Masthead Primary Left
+.region--masthead-primary__left {
+  flex: 1 1 250px;
+  max-width: 250px;
+  overflow: visible;
+
+  @include breakpoint($m-break) {
+    flex: 0 0 250px;
+    min-width: 250px;
+    max-width: none;
+  }
+
+  @include breakpoint($l-break) {
+    flex: 0 0 280px;
+    min-width: 280px;
+  }
+}
+
+// Masthead Primary Right
+.region--masthead-primary__right {
+  flex: 1 1 auto;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  align-items: center;
+  height: 100%;
+  overflow: visible;
+
+  @include breakpoint($xm-break) {
+    flex: 1 1 auto;
+    align-items: flex-end;
+    flex-wrap: wrap;
+  }
+
+  .region-inner {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+}
+
+// Masthead Primary Right Top
+.region--masthead-primary__right-top {
+  flex: 1 1 auto;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  overflow: visible;
+
+  @include breakpoint($m-break) {
+    flex: 1 1 auto;
+    height: auto;
+  }
+}
+
+// Masthead Primary Right Bottom
+.region--masthead-primary__right-bottom {
+  flex: 0 0 0px;
+  height: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  overflow: visible;
+
+  @include breakpoint($m-break) {
+    flex: 1 1 auto;
+    height: auto;
+  }
+
+  &:only-child {
+    align-items: center;
+  }
+
+  &:not(:only-child) {
+    @include breakpoint($m-break) {
+      flex: 0 0 auto;
+    }
+  }
+}

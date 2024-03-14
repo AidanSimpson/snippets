@@ -1,0 +1,4 @@
+// Outline border style mixin
+@mixin focus-style() {
+  outline: 1px dotted var(--grey-10);
+}

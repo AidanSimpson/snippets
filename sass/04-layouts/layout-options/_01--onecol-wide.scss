@@ -1,0 +1,13 @@
+/* 1 Column - Wide Layout */
+
+.one-column-wide {
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  padding: 0;
+
+  .block-inline-block--image-gallery {
+    .field--name-field-media-image {
+      justify-content: center;
+    }
+  }
+}

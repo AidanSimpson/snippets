@@ -1,0 +1,40 @@
+// Content Prefix Region
+.region--content-prefix {
+  width: 100%;
+  overflow: visible;
+  @include layout-container();
+  @include layout-container-padding();
+
+  > *:not(.block-system-breadcrumb-block):last-child {
+    margin-bottom: space(20);
+  }
+
+  .block:not(.block-entity-field--node--field-hero-image):not(.block-page-title-block) {
+    @include layout-container();
+  }
+
+  .block-page-title-block {
+    background-color: $tfir-purple;
+    @include fake-full-width;
+
+    > .page-title {
+      @include layout-container();
+      padding-top: 0.6rem;
+    }
+    h1 {
+      margin: 0 0 space(10);
+    }
+  }
+  .drupal-messages {
+    max-width: $layout-container;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: space(20);
+    padding-right: space(20);
+  }
+}
+
+/* Override for Homepage only due to Hero Slider */
+.path-frontpage .region--content-prefix {
+  margin-top: 0;
+}

@@ -1,0 +1,76 @@
+@keyframes throbber-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+// Ajax Progress Throbber
+
+.ajax-progress-throbber:not(.js-off-canvas-computed-ignore) {
+  position: absolute;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  display: flex;
+  transform: translate(-50%, -50%);
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  background: transparent !important;
+
+  .throbber {
+    width: 100%;
+    padding: 0;
+    background-image: none;
+    background-color: var(--primary-2-50) !important;
+    border-radius: 100%;
+    border: 1px solid var(--grey-100);
+
+    &::before {
+      @include icon($material--settings);
+      animation: throbber-spin 2s infinite linear;
+      color: var(--grey-100);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .message {
+    display: block;
+    width: auto;
+    flex: 0 0 auto;
+    background-color: var(--primary-2-50) !important;
+    border: 1px solid var(--grey-100);
+    border-radius: $radius-1;
+    font-weight: $bold;
+    padding: rem(10);
+    height: rem(35);
+    color: var(--grey-100) !important;
+  }
+}
+
+// Progress Throbber that comes after form-submit
+.form-submit + .ajax-progress-throbber:not(.js-off-canvas-computed-ignore) {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-top: rem(20);
+  margin-bottom: rem(30);
+  transform: none;
+  width: auto;
+  height: auto;
+
+  .throbber {
+    flex: 0 0 24px;
+    height: 24px;
+    width: auto;
+    margin-right: rem(10);
+  }
+}

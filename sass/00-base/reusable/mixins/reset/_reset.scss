@@ -1,0 +1,5 @@
+// Removal of margin and padding mixin
+@mixin reset {
+  margin: 0;
+  padding: 0;
+}

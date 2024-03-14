@@ -1,0 +1,201 @@
+// Page while off canvas menu is active
+.mm-wrapper_opening .mm-page {
+  border-right: 1px solid var(--primary-1-50);
+}
+
+// Mobile Menu - Overrides
+.mm-menu {
+  background-color: var(--grey-80);
+  flex-direction: column-reverse;
+
+  .menu-name--buy-tickets {
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-color: #000000;
+    background: #8E7BEF;
+
+    &:after {
+      content: url('#{$img}/iconography/ticket--white.svg');
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 0 20px 0 0;
+      position: unset;
+      border-bottom: unset;
+    }
+  }
+
+  .mm-listitem,
+  .mm-navbar__title {
+    font-size: 28px;
+    font-weight: 750;
+    line-height: 48px;
+    letter-spacing: -0.42px;
+    color: var(--grey-100);
+    border-color: var(--grey-100);
+
+    a:hover {
+      background: $tfir-purple;
+    }
+
+    a:focus-visible {
+      outline: revert;
+    }
+
+    a.mm-btn_next {
+      &:after {
+        border-color: $grey-100;
+      }
+    }
+  }
+
+  .mm-navbar__title {
+    //margin-left: rem(-40); // offset width of absolutely positioned close button
+    padding-left: rem(10);
+    padding-right: rem(10);
+    flex-grow: 0;
+    
+    &:hover {
+      text-decoration: underline;
+    }
+
+    &:focus-visible {
+      outline: revert;
+    }
+  }
+
+  .mm-listview > .menu-name--secondary-navigation {
+      margin-top: 25px;
+  }
+
+  .mm-listview > .menu-name--secondary-navigation ~ .menu-name--secondary-navigation {
+      margin-top: 0;
+  }
+
+  .menu-name--secondary-navigation {
+    font-size: 25px;
+    line-height: 10px;
+    letter-spacing: -0.375px;
+    font-weight: 400;
+    border-color: $grey-00;
+
+    &:after {
+      border: none;
+    }
+  }
+
+  // Anchors
+  a {
+    text-decoration: none;
+  }
+
+  // Panel
+  .mm-panel_has-navbar {
+    padding-top: 51px;
+
+    &::before {
+      display: none;
+    }
+  }
+
+  // Top Nav Bar / Title
+  .mm-navbar {
+    background-color: var(--primary-1-50);
+    height: auto;
+    align-items: center;
+    justify-content: center;
+
+    a {
+      color: var(--grey-100);
+      padding-top: rem(15);
+      padding-bottom: rem(15);
+    }
+
+    &.mm-navbar_sticky {
+      background-color: $grey-00;
+    }
+  }
+
+  // Previous level button
+  a.mm-btn_prev {
+    height: 100%;
+    position: absolute;
+    left: 0;
+
+    &::before {
+      border-color: var(--grey-100);
+    }
+
+    &:hover {
+      background-color: $tfir-purple;
+    }
+
+    &:focus-visible {
+      outline: revert;
+    }
+  }
+
+  // Close menu Button
+  .close-menu {
+    display: none !important; // hide duplicate button
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 40px;
+    font-size: 0;
+    display: flex;
+    align-items: center;
+    padding-left: 4px;
+
+    &::before {
+      @include icon($material--close);
+      font-size: 20px;
+      color: var(--grey-100);
+    }
+
+    &:active {
+      background-color: rgba(0,0,0,0.5);
+    }
+  }
+
+  // Menu
+  .menu {
+    margin-top: 0 !important;
+
+    // List items
+    li {
+      &::after {
+        display: none;
+      }
+    }
+
+    // Linked items
+    a {
+      border-bottom: 1px solid var(--grey-100);
+      border-color: var(--grey-100);
+      color: var(--grey-100);
+      padding-top: rem(14);
+      padding-bottom: rem(14);
+
+      &.is-active {
+        background-color: var(--grey-100);
+        color: var(--grey-100);
+      }
+    }
+
+    .menu-item--active-trail {
+      a {
+        &:last-child {
+          background-color: var(--grey-100);
+          border-left: 5px solid var(--grey-100);
+        }
+
+        &.is-active {
+          background-color: var(--grey-100);
+          color: var(--grey-100);
+        }
+      }
+    }
+  }
+}

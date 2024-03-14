@@ -1,0 +1,69 @@
+// Button mixin
+
+// Settings
+// $type -- primary | secondary | tertiary
+// $size -- regular | small
+// $icon -- {path to file} | {font awesome icon variable or character} (define $icon-type as 'file' if using image file)
+// $icon-type -- icon-font | file
+// $icon-location -- left | right
+
+@mixin btn($type: primary, $color: black) {
+  align-items: center;
+  cursor: pointer;
+  text-decoration: none;
+  padding: 0.15rem rem(32);
+  text-align: center;
+  justify-content: center;
+  letter-spacing: -0.025em;
+  font-weight: 700;
+  display: inline-block;
+  font-size: 1rem;
+  line-height: 1.875rem;
+  margin-bottom: 1rem;
+
+  // Primary Button Style
+  @if $type == primary {
+    border: 1px solid $grey-00;
+    color: $grey-00;
+
+    &:focus,
+    &:hover {
+      border: 1px solid $grey-30;
+    }
+  }
+
+  // Color - Black
+  @if $color == black {
+    border: 1px solid $grey-00;
+    background-color: $grey-00;
+    color: $grey-100;
+
+    &:focus,
+    &:hover {
+      background-color: $grey-20;
+      border: 1px solid $grey-20;
+      color: $grey-100;
+    }
+  }
+
+  // Color - White
+  @if $color == white {
+    border: 1px solid $grey-00;
+    background-color: $grey-100;
+    color: $grey-00;
+
+    &:focus,
+    &:hover {
+      background-color: $grey-100;
+      border: 1px solid $grey-30;
+      color: $grey-30;
+    }
+  }
+}
+
+// Override for Buttons in CKEditor fields.
+div.text-formatted {
+  a[class^="btn-primary"] {
+    margin-right: 1rem;
+  }
+}

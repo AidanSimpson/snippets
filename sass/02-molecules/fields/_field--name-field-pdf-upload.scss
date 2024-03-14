@@ -1,0 +1,14 @@
+// PDF upload field
+.field--name-field-pdf-upload {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  
+  .field__item {
+    flex: 1 1 auto;
+  }
+
+  details {
+    margin: 0 0 rem(19);
+  }
+}

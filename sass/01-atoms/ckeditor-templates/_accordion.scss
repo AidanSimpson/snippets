@@ -1,0 +1,108 @@
+// Accordion Details template styles
+details {
+  border: unset;
+  margin-bottom: 3rem;
+  // Accordion closed.
+  summary {
+    padding: 0;
+    font-size: rem(20);
+    letter-spacing: -0.015em;
+    font-weight: $bold;
+    display: flex;
+    align-items: center;
+    min-height: 45px;
+    border-bottom: 1px solid #000000;
+    position: relative;
+    padding-left: 65px;
+    overflow: hidden;
+    padding-top: 15px;
+
+    &::marker {
+      display: none;
+      content: '';
+    }
+
+    &:before {
+      content: url('../../dist/img/iconography/accordion-open-2.svg');
+      background: $grey-00;
+      position: absolute;
+      left: 0;
+      height: 100%;
+      margin-top: auto;
+      display: flex;
+      align-items: center;
+      padding: 0 2px 0 2px;
+
+      @include breakpoint($m-break) {}
+    }
+  }
+
+  // Accordion opened.
+  summary[aria-expanded*="true"] {
+
+    &::marker {
+      display: none;
+      content: '';
+    }
+
+    &:before {
+      content: url('../../dist/img/iconography/accordion-close-2.svg');
+    }
+  }
+
+  .details-wrapper {
+    padding: rem(25) rem(65);
+
+    @include breakpoint($m-break-max) {
+      padding: rem(25) rem(200) rem(25) rem(65);
+    }
+
+    p {
+      margin: 0;
+      font-size: $base-font-size;
+      line-height: rem(30);
+      letter-spacing: -0.015em;
+    }
+  }
+
+  .content-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: space(20) space(30);
+    align-items: flex-start;
+    justify-content: space-between;
+    border-top: 1px solid $brand-special-deep-gray;
+    padding: rem(25) rem(65);
+
+    @include breakpoint($m-break-max) {
+      flex-wrap: nowrap;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    .download-btn {
+      @include btn(primary, yellow);
+      color: $grey-00 !important;
+      text-decoration: none !important;
+      margin: 0;
+    }
+  }
+}
+
+// Accordion opened by default.
+details[open] {
+
+  summary {
+
+    &::marker {
+      display: none;
+      content: '';
+    }
+
+    &:before {
+      content: url('../../dist/img/iconography/accordion-close-2.svg');
+    }
+  }
+}

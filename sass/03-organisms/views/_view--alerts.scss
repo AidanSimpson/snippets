@@ -1,0 +1,73 @@
+/* View - ALerts. */
+
+.view-display-id-alerts {
+
+  .view-content {
+
+    /* Override view mode style specific to this display. */
+    .node--view-mode-full {
+      margin-top: 0;
+    }
+
+    /* Font colour dependant on set Background colour. */
+    .color-grey,
+    .color-black {
+      color: $grey-100;
+    }
+
+    /* Link colour determined by set Background colour. */
+    .color-grey,
+    .color-black {
+      a {
+        color: $grey-100;
+      }
+    }
+    .color-blue,
+    .color-green,
+    .color-yellow,
+    .color-red {
+      a {
+        color: $grey-00;
+      }
+    }
+
+    /* Background colour determined by added class. */
+    .color-blue {
+      background: $tfir-blue;
+    }
+
+    .color-green {
+      background: $tfir-green;
+    }
+
+    .color-yellow {
+      background: $tfir-lime;
+    }
+
+    .color-grey {
+      background: $grey-50;
+    }
+
+    .color-black {
+      background: $grey-00;
+    }
+
+    .color-red{
+      background: $tfir-red;
+    }
+  }
+
+  /* Text styles specific to the Alert Node type. */
+  .field--name-field-alert-text-long {
+    line-height: 1.875rem;
+    padding: 1.25rem;
+    max-width: 81.3125rem;
+    margin: auto;
+    font-weight: $normal;
+    text-align: center;
+    /* Alerts shouldn't have multiple paragraphs, and this avoids extra space. */
+    p {
+      margin-bottom: 0rem;
+    }
+  }
+}
